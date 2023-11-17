@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Management" xml:space="preserve">
+    <value>Account Management</value>
+  </data>
+  <data name="Build_dream_home" xml:space="preserve">
+    <value>Build Dream Home</value>
+  </data>
+  <data name="Cabinet" xml:space="preserve">
+    <value>Cabinet</value>
+  </data>
+  <data name="Chair" xml:space="preserve">
+    <value>Chair</value>
+  </data>
+  <data name="Door" xml:space="preserve">
+    <value>Door</value>
+  </data>
+  <data name="Lamp" xml:space="preserve">
+    <value>Lamp</value>
+  </data>
+  <data name="learn_more" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Model_Management" xml:space="preserve">
+    <value>Model Management</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="My_Profile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="Our_Products" xml:space="preserve">
+    <value>Our Products</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Roof" xml:space="preserve">
+    <value>Roof</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Search_by_category" xml:space="preserve">
+    <value>Search by Category</value>
+  </data>
+  <data name="Sign_Out" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="Sofa" xml:space="preserve">
+    <value>Sofa</value>
+  </data>
+  <data name="Table" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="Trending_products" xml:space="preserve">
+    <value>Trending Products</value>
+  </data>
+  <data name="Uploaded_Model" xml:space="preserve">
+    <value>Uploaded Model</value>
+  </data>
+  <data name="Upload_Model" xml:space="preserve">
+    <value>Upload Model</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Window" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Verification_Code" xml:space="preserve">
+    <value>Verification Code</value>
+  </data>
+  <data name="V_Click" xml:space="preserve">
+    <value>Click to Change</value>
+  </data>
+  <data name="First_Name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Last_Name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Full_Name" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Company_Organization" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="Occupation" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
+  <data name="Permission" xml:space="preserve">
+    <value>Permission</value>
+  </data>
+  <data name="Choose_Permission" xml:space="preserve">
+    <value>choose permission to change</value>
+  </data>
+  <data name="Object_Name" xml:space="preserve">
+    <value>Object Name</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="Created_By" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="Created_Time" xml:space="preserve">
+    <value>Date of publishing</value>
+  </data>
+  <data name="Change_Owner" xml:space="preserve">
+    <value>Prepare to change Owner to</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create an account</value>
+  </data>
+  <data name="Create_an_account" xml:space="preserve">
+    <value>Create an account</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="Introduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="More_Detail" xml:space="preserve">
+    <value>More Detail</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Configuration" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Dont_have_account" xml:space="preserve">
+    <value>Register Now</value>
+  </data>
+  <data name="Already_have_account" xml:space="preserve">
+    <value>Login Now</value>
+  </data>
+  <data name="FacadeCurtainWall" xml:space="preserve">
+    <value>FacadeCurtainWall</value>
+  </data>
+  <data name="Enter_Comment" xml:space="preserve">
+    <value>Please enter your comment here</value>
+  </data>
+  <data name="Enter_Email" xml:space="preserve">
+    <value>Please enter your email</value>
+  </data>
+  <data name="Enter_Password" xml:space="preserve">
+    <value>Please enter your password</value>
+  </data>
+  <data name="Enter_Verification" xml:space="preserve">
+    <value>Please enter the verification code</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="Upload_Image" xml:space="preserve">
+    <value>Upload Image</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Belong_to" xml:space="preserve">
+    <value>Belong to</value>
+  </data>
+  <data name="Organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="Personal" xml:space="preserve">
+    <value>Personal</value>
+  </data>
+  <data name="Author_or_Organization_Name" xml:space="preserve">
+    <value>Author / Organization Name</value>
+  </data>
+  <data name="Model_Name" xml:space="preserve">
+    <value>Model Name</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="Depth" xml:space="preserve">
+    <value>Depth</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="millimeter" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="centimeter" xml:space="preserve">
+    <value>cm</value>
+  </data>
+  <data name="meter" xml:space="preserve">
+    <value>meter</value>
+  </data>
+  <data name="kilometer" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="inch" xml:space="preserve">
+    <value>inch</value>
+  </data>
+  <data name="feet" xml:space="preserve">
+    <value>feet</value>
+  </data>
+  <data name="yard" xml:space="preserve">
+    <value>yard</value>
+  </data>
+  <data name="mile" xml:space="preserve">
+    <value>mil</value>
+  </data>
+  <data name="Product_Structure" xml:space="preserve">
+    <value>Product Structure</value>
+  </data>
+  <data name="Specification" xml:space="preserve">
+    <value>Specification</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Enter_First_Name" xml:space="preserve">
+    <value>Please enter your first name</value>
+  </data>
+  <data name="Enter_Last_Name" xml:space="preserve">
+    <value>Please enter your last name</value>
+  </data>
+  <data name="Enter_Username" xml:space="preserve">
+    <value>Please enter your username</value>
+  </data>
+  <data name="Enter_Occupation" xml:space="preserve">
+    <value>Please enter your occupation</value>
+  </data>
+  <data name="Company_or_Organization" xml:space="preserve">
+    <value>Company/Organization</value>
+  </data>
+  <data name="Enter_Company_or_Organization" xml:space="preserve">
+    <value>Please enter your company or organization name</value>
+  </data>
+  <data name="Confirm_Password" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Enter_Confirm_Password" xml:space="preserve">
+    <value>Please confirm the password you entered</value>
+  </data>
+  <data name="Sign_Up" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="Check_Model" xml:space="preserve">
+    <value>Check Model</value>
+  </data>
+  <data name="Model_Information" xml:space="preserve">
+    <value>Model Information</value>
+  </data>
+  <data name="Product_Accessories" xml:space="preserve">
+    <value>Product Accessories</value>
+  </data>
+  <data name="FileType" xml:space="preserve">
+    <value>File Type</value>
+  </data>
+  <data name="Software_Specifications" xml:space="preserve">
+    <value>Software Specifications</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="Comment_Area" xml:space="preserve">
+    <value>Comment Area</value>
+  </data>
+  <data name="Date_of_publishing" xml:space="preserve">
+    <value>Date of publishing</value>
+  </data>
+  <data name="Contact_Us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+</root>

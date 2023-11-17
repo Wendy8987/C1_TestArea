@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Model_Library.Models.UserModel>
+@using Model_Library.Models;
+@using Model_Library.Resources;
+@{
+    List<UserModel> users = ViewBag.User;
+}
+<section >
+    <table class="table">
+        <tr>
+            <th>
+                @Resource.Email
+            </th>
+            <th>
+                @Resource.Full_Name
+            </th>
+            <th>
+                @Resource.Company_Organization
+            </th>
+            <th>
+                @Resource.Occupation
+            </th>
+            <th>
+                @Resource.Permission
+            </th>
+        </tr>
+        
+        @foreach (UserModel user in users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.First_Name) @Html.DisplayFor(modelItem => user.Last_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Company_Organization)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Occupation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Permission) -> <form action="~/Management/EditAcc" method="post">
+                        <select name="permission"><option value="">@Resource.Choose_Permission</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
+                        <input type="hidden" name="Id" value="@user.Id" />
+                        <input type="hidden" name="Email" value="@user.Email" />
+                        <input type="hidden" name="permission_2" value="@user.Permission">
+                        <input type="submit" value="@Resource.Edit" class="btn btn-primary" />
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </table>
+</section>

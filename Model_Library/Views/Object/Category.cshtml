@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Model_Library.Models.Objectmodel>
+@using Model_Library.Models;
+@using Model_Library.Resources;
+@{
+    List<Objectmodel> objs = ViewBag.obj;
+}
+<head>
+    @Styles.Render("~/Content/Category")
+</head>
+<section>
+    <section class="u-align-center u-clearfix u-container-align-center u-grey-10 u-section-3" id="carousel_f4ab">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    @foreach (Objectmodel obj in objs)
+                    {
+
+
+
+                        <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-2" >
+                            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+                                <img class="u-expanded-width u-image u-image-default u-image-2" alt="" data-image-width="596" data-image-height="585" src="data:image/png;base64,@obj.ObjectImage">
+                                <h4 class="u-align-center ">@obj.ObjectName</h4>
+                                <p class="u-align-center u-small-text ">
+                                    @Resource.Created_Time:<br>@obj.ReleaseDate.Split('_')[0]</p>
+                                    <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-3">@obj.OrganizationOfAuthor</h4>
+                                    <form action="~/Object/ObjectDetail" method="get">
+                                        <button name="ObjectName" value="@obj.ObjectName" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.More_Detail</button>
+                                        <input name="ReleaseDate" value="@obj.ReleaseDate" type="hidden">
+                                        <input name="Author" value="@obj.Author" type="hidden">
+                                    </form>
+</div>
+                        </div>
+
+
+
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+

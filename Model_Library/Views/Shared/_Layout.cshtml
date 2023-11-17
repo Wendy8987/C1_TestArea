@@ -1,0 +1,199 @@
+﻿@model IEnumerable<Model_Library.Models.UserModel>
+@using Model_Library.Resources;
+
+@if (TempData["Message"] != null)
+{
+    <script type="text/javascript">
+        var message = @Html.Raw(Json.Encode(TempData["Message"]));
+        alert(message);
+    </script>
+}
+@if (TempData["error"] != null)
+{
+    
+    <dialog id="infoModal">
+        <p id="error">@TempData["error"]</p>
+        <button id="close">close</button>
+    </dialog>
+
+    <script type="text/javascript">
+        let infoModal = document.querySelector("#infoModal");
+        let close = document.querySelector("#close");
+
+        close.addEventListener("click", function () {
+            infoModal.close();
+        })
+        infoModal.showModal();
+    </script>
+
+
+}
+@if (TempData["Successfully"] != null)
+{
+    <script type="text/javascript">
+        var message = @Html.Raw(Json.Encode(TempData["Successfully"]));
+        alert(message);
+    </script>
+}
+@if (Session["Account"] == null)
+{
+    Session["Account"] = "Guest";
+    Session["First_Name"] = "";
+    Session["Last_Name"] = "";
+    Session["Location"] = "";
+    Session["Company"] = "";
+    Session["Occupation"] = "";
+    Session["Permission"] = "0";
+}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+<head>
+    @Styles.Render("~/Content/nicepage")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body class="u-body u-xl-mode" data-lang="en">
+    <header class="u-clearfix u-header u-header" id="sec-5863" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-custom-font u-font-merriweather u-text u-text-1">
+                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-color u-btn-1" href="/Home/Index">IP​CS</a>
+            </h2>
+            <form action="~/Object/Category" method="get" id="search" class="u-border-1 u-border-grey-30 u-search u-search-left u-white u-search-1">
+                <button class="u-search-button" type="submit">
+                    <span class="u-search-icon u-spacing-10">
+                        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0b8b"></use></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-0b8b" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" class="u-svg-content"><path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"></path></svg>
+                    </span>
+                </button>
+                <input class="u-search-input" type="search" name="ObjectCategory" value="" placeholder="@Resource.Search">
+            </form>
+            <nav class="u-menu u-menu-hamburger u-menu-open-right u-offcanvas u-offcanvas-shift u-menu-1" data-responsive-from="XL">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+                    <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-file-icon u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base u-file-icon-1" href="#">
+                        <img src="~/Images/2102647.png">
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container">
+                    <p id="Account_" class="u-align-center u-custom-font u-font-merriweather u-nav u-popupmenu-items u-spacing-30 u-text-hover-palette-2-light-1 u-unstyled u-nav-2" style="padding: 10px;">@HttpContext.Current.Session["Account"].ToString()</p>
+                    <p id="Permission" hidden="hidden">@HttpContext.Current.Session["Permission"].ToString()</p>
+                    <ul class="u-nav u-unstyled u-nav-1">
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="Login_" href="~/User/Login">@Resource.LogIn</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="Register_" href="~/User/Register">@Resource.Register</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="Profile_" href="~/User/MyProfile">@Resource.My_Profile</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="UploadModel_" href="~/Object/UploadObject">@Resource.Upload_Model</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="UploadedModel_" href="~/Object/ShowUploaded">@Resource.Uploaded_Model</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="ModelManagement_" href="~/Management/ShowObj">@Resource.Model_Management</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="AccountManagement_" href="~/Management/ShowAcc">@Resource.Account_Management</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link" id="Logout_" href="~/User/Logout">@Resource.Sign_Out</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="u-custom-menu u-nav-container-collapse">
+                    <div class="u-container-style u-grey-70 u-inner-container-layout u-opacity u-opacity-85 u-sidenav">
+                        <div class="u-inner-container-layout u-sidenav-overflow">
+                            <div class="u-menu-close"></div>
+                            <p id="Account" class="u-align-center u-custom-font u-font-merriweather u-nav u-popupmenu-items u-spacing-30 u-text-hover-palette-2-light-1 u-unstyled u-nav-2" style="padding: 10px;">@HttpContext.Current.Session["Account"].ToString()</p>
+                            <ul class="u-align-center u-custom-font u-font-merriweather u-nav u-popupmenu-items u-spacing-30 u-text-hover-palette-2-light-1 u-unstyled u-nav-2">
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="Login" href="~/User/Login">@Resource.LogIn</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="Register" href="~/User/Register">@Resource.Register</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="Profile" href="~/User/MyProfile">@Resource.My_Profile</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="UploadModel" href="~/Object/UploadObject">@Resource.Upload_Model</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="UploadedModel" href="~/Object/ShowUploaded">@Resource.Uploaded_Model</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="ModelManagement" href="~/Management/ShowObj">@Resource.Model_Management</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="AccountManagement" href="~/Management/ShowAcc">@Resource.Account_Management</a>
+                                </li>
+                                <li class="u-nav-item">
+                                    <a class="u-button-style u-nav-link" id="Logout" href="~/User/Logout">@Resource.Sign_Out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="u-menu-overlay"></div>
+                </div>
+            </nav>
+            <button class="u-file-icon u-icon u-icon-rectangle u-text-grey-75 u-icon-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                    <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+                    <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
+                </svg>
+                <ul class="dropdown-menu">
+                    <li type="button" onclick="changeLanguage('en-US')">English</li>
+                    <li type="button" onclick="changeLanguage('zh-TW')">繁體中文</li>
+                    <li type="button" onclick="changeLanguage('zh-CN')">簡體中文</li>
+                </ul>
+            </button>
+            <!--<a class="u-file-icon u-icon u-icon-rectangle u-text-grey-75 u-icon-1" href="~/User/Logout"><img src="~/Images/10405578-5656ab09.png" alt=""></a>-->
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-bada">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-align-center u-hover-feature u-small-text u-text u-text-variant u-text-1">@Resource.Contact_Us&nbsp; </p>
+            <div class="u-hover-feature u-social-icons u-spacing-10 u-social-icons-1">
+                <a class="u-social-url" title="facebook" target="_blank" href="https://facebook.com/name">
+                    <span class="u-icon u-social-facebook u-social-icon u-icon-1">
+                        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7aed"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-7aed">
+                            <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
+                            <path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
+c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path>
+                        </svg>
+                    </span>
+                </a>
+                <a class="u-social-url" target="_blank" data-type="Email" title="Email" href="">
+                    <span class="u-icon u-social-email u-social-icon u-icon-2">
+                        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0d0f"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-0d0f">
+                            <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
+                            <path id="path3864" fill="#FFFFFF" d="M27.2,28h57.6c4,0,7.2,3.2,7.2,7.2l0,0v42.7c0,3.9-3.2,7.2-7.2,7.2l0,0H27.2
+	c-4,0-7.2-3.2-7.2-7.2V35.2C20,31.1,23.2,28,27.2,28 M56,52.9l28.8-17.8H27.2L56,52.9 M27.2,77.7h57.6V43.5L56,61.3L27.2,43.5V77.7z
+	"></path>
+                        </svg>
+                    </span>
+                </a>
+                <a class="u-social-url" target="_blank" data-type="Phone" title="Phone" href="">
+                    <span class="u-icon u-social-icon u-social-phone u-icon-3">
+                        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-2f7e"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-2f7e">
+                            <circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle>
+                            <path fill="#FFFFFF" d="M82.7,66c-3.9,0-7.7-0.6-11.3-1.8c-1.8-0.6-4,0-5,1.1l-7.1,5.4c-8.3-4.4-13.4-9.5-17.7-17.7l5.2-7
+	c1.4-1.4,1.8-3.3,1.3-5.2c-1.2-3.6-1.8-7.5-1.8-11.3c0-2.8-2.3-5.1-5.1-5.1H29.5c-2.8,0-5.1,2.3-5.1,5.1c0,32.2,26.2,58.4,58.4,58.4
+	c2.8,0,5.1-2.3,5.1-5.1V71.1C87.8,68.3,85.6,66,82.7,66z"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/nicepage")
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿.label-title {
+    margin-left: 20px;
+}
+.upload-box {
+    margin-left: 20px;
+}
+.input-box {
+    margin-left: 15px;
+    width: 99%;
+}
+.uploadbtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}

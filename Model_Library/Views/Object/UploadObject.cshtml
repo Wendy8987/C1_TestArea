@@ -1,0 +1,133 @@
+﻿@model Model_Library.Models.FileUploadModel
+@using Model_Library.Resources;
+
+<head>
+    @Styles.Render("~/Content/UploadObject")
+</head>
+
+<section>
+    @using (Html.BeginForm("UploadObject", "Object", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+@Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label for="inputCardLevel" class="label-title">@Resource.Upload_Image</label>
+                        <div class="upload-box">
+                            <input type="file" name="img" id="img" multiple required="required" accept=".png,.jpg">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCardLevel" class="label-title">@Resource.Upload_Model</label>
+                        <div class="upload-box">
+                            <input type="file" name="Object_M" id="Object_M" multiple required="required" accept=".3dm,.ifc,.rvt,.dwg">
+                        </div>
+                    </div>
+
+                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 15px;">
+                        <div class="u-form-group u-form-select u-label-top u-form-group-1">
+                            <label for="select-d54c" class="label-title">@Resource.Category*</label>
+                            <div class="u-form-select-wrapper input-box">
+                                <select id="select-d54c" name="ObjectCategory" class="u-input u-input-rectangle u-radius-10" required="required">
+                                    <option value="sofa">@Resource.Sofa</option>
+                                    <option value="lamp">@Resource.Lamp</option>
+                                    <option value="table">@Resource.Table</option>
+                                    <option value="door">@Resource.Door</option>
+                                    <option value="window">@Resource.Window</option>
+                                    <option value="cabinet">@Resource.Cabinet</option>
+                                    <option value="chair">@Resource.Chair</option>
+                                    <option value="roof">@Resource.Roof</option>
+                                    <option value="facadecurtainwall">@Resource.FacadeCurtainWall</option>
+                                </select>
+                                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="u-form-group u-form-radiobutton u-label-top u-form-group-3">
+                            <label class="label-title">@Resource.Belong_to *</label>
+                            <div class="u-form-radio-button-wrapper input-box">
+                                <div class="u-input-row">
+                                    <input id="field-444b" type="radio" name="Owner" value="Organization" class="u-border-2 u-border-palette-5-dark-1 u-hover-palette-2-light-1 u-radius-15 u-white" checked="checked" required="required" data-calc="Organization">
+                                    <label class="u-field-label label-title" for="field-444b">@Resource.Organization</label>
+                                </div>
+                                <div class="u-input-row">
+                                    <input id="field-9370" type="radio" name="Owner" value="Personal" class="u-border-2 u-border-palette-5-dark-1 u-hover-palette-2-light-1 u-radius-15 u-white" required="required" data-calc="Personal">
+                                    <label class="u-field-label label-title" for="field-9370">@Resource.Personal</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-4">
+                            <label for="text-7ea7" class="label-title">@Resource.Author_or_Organization_Name *</label>
+                            <input type="text" id="text-7ea7" name="OrganizationOfAuthor" class="u-input u-input-rectangle u-radius-10 input-box" required="required">
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-5">
+                            <label for="text-0c31" class="label-title">@Resource.Model_Name *</label>
+                            <input type="text" placeholder="" id="text-0c31" name="ObjectName" class="input-box u-input u-input-rectangle u-radius-10" required="required">
+                        </div>
+                        <div class="u-form-group u-form-textarea u-label-top u-form-group-13">
+                            <label for="textarea-36da" class="label-title">@Resource.Introduction</label>
+                            <textarea rows="4" cols="50" maxlength="500" id="textarea-36da" name="ObjectIntroduction" class="u-input u-input-rectangle u-radius-10 input-box" placeholder="Please introduce your model and enter less than 500 words"></textarea>
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-6">
+                            <label for="text-b057" class="label-title">@Resource.Version *</label>
+                            <input type="text" placeholder="" id="text-b057" name="VersionNumber" class="u-input u-input-rectangle u-radius-10 input-box" required="required">
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-7">
+                            <label for="text-2d7f" class="label-title">* @Resource.Height:</label>
+                            <input type="text" placeholder="" id="text-2d7f" name="Height" class="u-input u-input-rectangle u-radius-10 input-box" required="required">
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-8">
+                            <label for="text-137a" class="label-title">* @Resource.Width:</label>
+                            <input type="text" placeholder="" id="text-137a" name="Width" class="u-input u-input-rectangle u-radius-10 input-box" required="required">
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-9">
+                            <label for="text-877e" class="label-title">* @Resource.Depth:</label>
+                            <input type="text" placeholder="" id="text-877e" name="Depth" class="u-input u-input-rectangle u-radius-10 input-box" required="required">
+                        </div>
+                        <div class="u-form-group u-form-select u-label-top u-form-group-10">
+                            <label for="select-65d5" class="label-title">@Resource.Unit*</label>
+                            <div class="u-form-select-wrapper input-box">
+                                <select id="select-65d5" name="Unit" class="u-input u-input-rectangle u-radius-10" required="required">
+                                    <option value="mm" data-calc="Millimeters">@Resource.millimeter</option>
+                                    <option value="cm" data-calc="Centimeters">@Resource.centimeter</option>
+                                    <option value="m" data-calc="Meters">@Resource.meter</option>
+                                    <option data-calc="Kilometers" value="km">@Resource.kilometer</option>
+                                    <option data-calc="Inches" value="inch">@Resource.inch</option>
+                                    <option data-calc="Feet" value="ft">@Resource.feet</option>
+                                    <option data-calc="Yards" value="yd">@Resource.yard</option>
+                                    <option data-calc="Miles" value="mil">@Resource.mile</option>
+                                </select>
+                                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+                            </div>
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-11">
+                            <label for="text-d7d6" class="label-title">@Resource.Product_Structure</label>
+                            <input type="text" placeholder="" id="text-d7d6" name="ProductMaterialStructure" class="u-input u-input-rectangle u-radius-10 input-box">
+                        </div>
+
+                    </form>
+
+                    <div class="form-group">
+                        <label for="inputCardLevel" class="label-title">@Resource.Specification (.pdf)</label>
+                        <div class="input-box">
+                            <input type="file" name="Specification" id="Specification" multiple>
+                            @Html.ValidationMessageFor(model => model.Specification, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputCardLevel" class="label-title">@Resource.Specification (.pdf)</label>
+                        <div class="input-box">
+                            <input type="file" name="Specification" id="Specification" multiple>
+                            @Html.ValidationMessageFor(model => model.Specification, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="@Resource.Upload" class="uploadbtn" />
+                        </div>
+                    </div>
+                </div>}
+</section>

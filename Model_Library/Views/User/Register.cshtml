@@ -1,0 +1,66 @@
+﻿@model Model_Library.Models.UserModel
+@using Model_Library.Resources;
+
+<head>
+    @Styles.Render("~/Content/SignUp")
+</head>
+
+    <section class="u-clearfix u-grey-5 u-section-1" id="sec-b219">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-align-center u-clearfix u-container-align-center">@Resource.Create_an_account</h2>
+            <div class="u-form u-form-1">
+                <form method="post" action="/User/Register" style="padding: 25px;">
+                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top">
+                        <label for="name-3b9a" class="u-label">@Resource.First_Name *</label>
+                        <input type="text" placeholder="@Resource.Enter_First_Name" id="name-3b9a" name="First_Name" class="u-input u-input-rectangle u-radius-15" required="">
+                    </div>
+                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top u-form-group-2">
+                        <label for="name-f4df" class="u-label">@Resource.Last_Name *</label>
+                        <input type="text" placeholder="@Resource.Enter_Last_Name" id="Last_Name" name="Last_Name" class="u-input u-input-rectangle u-radius-15" required="">
+                    </div>
+                    <div class="u-form-group u-label-top u-form-group-3">
+                        <label for="text-5933" class="u-label">@Resource.Username *</label>
+                        <input type="text" placeholder="@Resource.Enter_Username" id="Username" name="Username" class="u-input u-input-rectangle u-radius-15">
+                    </div>
+                    <div class="u-form-email u-form-group u-label-top">
+                        <label for="email-3b9a" class="u-label">@Resource.Email *</label>
+                        <input type="email" placeholder="@Resource.Enter_Email" id="email-3b9a" name="Email" class="u-input u-input-rectangle u-radius-15" required="">
+                    </div>
+                    <div class="u-form-group u-form-phone u-label-top u-form-group-5">
+                        <label for="phone-a976" class="u-label">@Resource.Occupation *</label>
+                        <input type="text" placeholder="@Resource.Enter_Occupation" id="phone-a976" name="Occupation" class="u-input u-input-rectangle u-radius-15" required="">
+                    </div>
+                    <div class="u-form-group u-form-name u-label-top u-form-group-6">
+                        <label for="name-f4df" class="u-label">@Resource.Company_or_Organization *</label>
+                        <input type="text" placeholder="@Resource.Enter_Company_or_Organization" id="Company_Organization" name="Company_Organization" class="u-input u-input-rectangle u-radius-15" required="">
+                    </div>
+                    <div class="u-form-country u-form-group u-label-top u-form-group-7">
+                        <label for="country-a96f" class="u-label">@Resource.Country</label>
+                        <div class="u-form-select-wrapper">
+                            <select id="country-a96f" name="Location" class="u-input u-input-rectangle u-radius-15"></select>
+                            <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+                        </div>
+                    </div>
+                    <div class="u-form-group u-label-top u-form-group-9">
+                        <label for="text-b7a1" class="u-label">@Resource.Password *</label>
+                        <input type="password" placeholder="@Resource.Enter_Password" id="text-b7a1" name="Password" class="u-input u-input-rectangle u-radius-15">
+                    </div>
+                    <div class="u-form-group u-label-top u-form-group-10">
+                        <label for="text-a17c" class="u-label">@Resource.Confirm_Password *</label>
+                        <input type="password" placeholder="@Resource.Enter_Confirm_Password" id="text-a17c" name="Password_2" class="u-input u-input-rectangle u-radius-15">
+                    </div>
+                    <div class="u-align-center u-form-group u-form-submit u-label-top">
+                        <a href="#" class="u-btn u-btn-submit u-button-style" style="margin-top: 15px; border-radius: 5px;">
+                            @Resource.Sign_Up<br>
+                        </a>
+                        <input type="submit" value="Sign Up" class="u-form-control-hidden">
+                    </div>
+                </form>
+            </div>
+            <p class="u-text u-text-default u-text-3">
+                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-3" href="/User/Login">@Resource.Already_have_account</a>
+            </p>
+        </div>
+    </section>
+
+

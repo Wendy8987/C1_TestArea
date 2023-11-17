@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Model_Library.Models.Objectmodel>
+@using Model_Library.Models;
+@using Model_Library.Resources;
+@{
+    ViewBag.Title = "ObjectManagement";
+    List<Objectmodel> objs = ViewBag.Obj;
+}
+<section>
+<table class="table">
+    <tr>
+        <th>
+            @Resource.Object_Name
+        </th>
+        <th>
+            @Resource.Owner
+        </th>
+        <th>
+            @Resource.Created_By
+        </th>
+        <th>
+            @Resource.Created_Time
+        </th>
+        <th>
+            @Resource.Change_Owner
+        </th>
+    </tr>
+
+    @foreach (Objectmodel obj in objs)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => obj.ObjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => obj.Owner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => obj.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => obj.ReleaseDate)
+            </td>
+            <td>
+                <form action="~/Management/EditObj" method="post">
+                    <select name="Owner"><option value="">@Resource.Change_Owner</option><option value="Organization">@Resource.Organization</option><option value="Personal">@Resource.Personal</option></select>
+                    <input type="hidden" name="Id" value="@obj.Id" />
+                    <input type="hidden" name="Owner_o" value="@obj.Owner" />
+                    <input type="submit" value="@Resource.Edit" class="btn btn-primary" />
+                </form>
+            </td>
+
+        </tr>
+    }
+</table>
+</section>

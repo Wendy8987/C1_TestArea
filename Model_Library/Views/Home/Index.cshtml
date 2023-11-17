@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Model_Library.Models.UserModel>
+@using Model_Library.Resources;
+<head>
+    @Styles.Render("~/Content/Home")
+</head>
+<section class="u-align-center u-clearfix u-container-align-center u-image u-section-1" src="" id="carousel_4823" data-image-width="3840" data-image-height="2160">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-1">@Resource.Our_Products</h2>
+        <p class="u-align-center u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-2">@Resource.Build_dream_home</p>
+    </div>
+</section> 
+<section class="u-align-center u-clearfix u-container-align-center u-grey-10 u-section-3" id="carousel_f4ab">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-align-center u-text u-text-1">@Resource.Search_by_category</h2>
+        <div class="u-expanded-width u-list u-list-1">
+            <div class="u-repeater u-repeater-1">
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
+                        <img class="u-expanded-width u-image u-image-default u-image-1" alt="" data-image-width="980" data-image-height="510" src="~/Images/sofa.jpg">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-2">@Resource.Sofa</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="sofa" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-2">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
+                        <img class="u-expanded-width u-image u-image-default u-image-2" alt="" data-image-width="596" data-image-height="585" src="~/Images/lamp.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-3">@Resource.Lamp</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="lamp" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-3">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
+                        <img class="u-expanded-width u-image u-image-default u-image-3" alt="" data-image-width="578" data-image-height="508" src="~/Images/table.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-4">@Resource.Table</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="table" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-4">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
+                        <img class="u-expanded-width u-image u-image-default u-image-4" alt="" data-image-width="887" data-image-height="929" src="~/Images/door.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-5">@Resource.Door</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="door" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-5">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-5">
+                        <img class="u-expanded-width u-image u-image-default u-image-5" alt="" data-image-width="675" data-image-height="675" src="~/Images/window.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-6">@Resource.Window</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="window" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-6">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-6">
+                        <img class="u-expanded-width u-image u-image-default u-image-6" alt="" data-image-width="675" data-image-height="675" src="~/Images/cabinet.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-7"> @Resource.Cabinet</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="cabinet" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-7">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-7">
+                        <img class="u-expanded-width u-image u-image-default u-image-7" alt="" data-image-width="675" data-image-height="675" src="~/Images/chair.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-8">@Resource.Chair</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="chair" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-8">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-8">
+                        <img class="u-expanded-width u-image u-image-default u-image-8" alt="" data-image-width="625" data-image-height="617" src="~/Images/roof.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-9">@Resource.Roof</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="roof" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white u-list-item-8">
+                    <div class="u-container-layout u-similar-container u-valign-top u-container-layout-8">
+                        <img class="u-expanded-width u-image u-image-default u-image-8" alt="" data-image-width="625" data-image-height="617" src="~/Images/curtainwall.png">
+                        <h4 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-9">@Resource.FacadeCurtainWall</h4>
+                        <form action="~/Object/Category" method="get">
+                            <button name="ObjectCategory" value="facadecurtainwall" class="u-active-none u-align-center u-border-1 u-border-active-palette-4-dark-1 u-border-black u-border-hover-palette-4-dark-1 u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-3">@Resource.more</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
