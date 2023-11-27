@@ -33,6 +33,7 @@
                                         <div>
                                             <button id="button_trigger" class="btn btn-light" style="display: none;"><i class="fa-solid fa-cubes"></i></button>
                                         </div>
+                                        <div id="preloader" style="display:none"><div id=status>&nbsp;</div></div>
                                         <div>
                                             <form method="get" action="/Object/threeD">
                                                 <div class="u-form-group u-form-select u-label-top u-form-group-1">
@@ -183,5 +184,10 @@ import { convertArray } from "three/src/animation/AnimationUtils";
                         $('.element_box').removeClass('is-visible');
                     }
                 });
+         $('#modelbtn').on('click', function () {
+             $("#preloader").css("display", "block");
+             console.log("test")
+
+         });
             });
 </script>

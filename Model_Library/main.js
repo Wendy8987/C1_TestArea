@@ -98,9 +98,11 @@ for (var x = 0; x < byteArray.length; x++) {
 
 var blob = new Blob([byteArray], { type: "application/octet-stream" });
 var btn = document.getElementById("button_trigger")
+var block = document.getElementById("modelbtn")
 const modelURL = URL.createObjectURL(blob);
 ifcLoader.load(modelURL, (ifcModel) => {
     loadIFC(modelURL)
+    block.style.display = "none";
     btn.style.display = "block";
 });
 async function loadIFC(url) {

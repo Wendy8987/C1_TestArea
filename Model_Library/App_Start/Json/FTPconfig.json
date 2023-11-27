@@ -1,7 +1,7 @@
 {
-  "ftpserver": "ftp://192.168.1.236/",
+  "ftpserver": "ftp://192.168.1.175/",
 
-  "ftpuser": "ftpadmin",
+  "ftpuser": "FTPadmin",
 
   "ftppass": "!Ntustcc123",
 
